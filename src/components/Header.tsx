@@ -4,9 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function Header() {
+interface HeaderProps {
+  onLogoClick?: () => void;
+}
+
+export default function Header({ onLogoClick }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const toggleMenu = () => {
@@ -14,9 +17,10 @@ export default function Header() {
   };
 
   const handleLogoClick = () => {
-    setIsLoading(true);
-    router.push('/');
-    // ローディングは親コンポーネントで管理
+    if (onLogoClick) {
+      onLogoClick();
+    }
+    router.push("/");
   };
 
   return (
@@ -48,36 +52,36 @@ export default function Header() {
               >
                 NEWS
               </Link>
-               <Link
-                 href="#artist"
-                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-               >
-                 ARTIST
-               </Link>
-               <Link
-                 href="#talent"
-                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-               >
-                 TALENT
-               </Link>
-               <Link
-                 href="#company"
-                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-               >
-                 COMPANY
-               </Link>
-               <Link
-                 href="#contact"
-                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-               >
-                 CONTACT
-               </Link>
-               <Link
-                 href="#audition"
-                 className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
-               >
-                 AUDITION
-               </Link>
+              <Link
+                href="#artist"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
+              >
+                ARTIST
+              </Link>
+              <Link
+                href="#talent"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
+              >
+                TALENT
+              </Link>
+              <Link
+                href="#company"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
+              >
+                COMPANY
+              </Link>
+              <Link
+                href="#contact"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
+              >
+                CONTACT
+              </Link>
+              <Link
+                href="#audition"
+                className="text-gray-900 hover:text-gray-600 px-3 py-2 text-sm font-medium"
+              >
+                AUDITION
+              </Link>
             </div>
           </nav>
 

@@ -14,34 +14,39 @@ import AuditionSection from "@/components/AuditionSection";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isClient, setIsClient] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setMounted(true);
+    // 再読み込み時もローディングを表示するため、sessionStorageをクリア
+    sessionStorage.removeItem("hasLoaded");
+
     // 初回読み込み時のみローディング
-    if (typeof window !== "undefined") {
-      const hasLoaded = sessionStorage.getItem("hasLoaded");
-      if (hasLoaded) {
-        setIsLoading(false);
-      }
+    const hasLoaded = sessionStorage.getItem("hasLoaded");
+    if (hasLoaded) {
+      setIsLoading(false);
     }
   }, []);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("hasLoaded", "true");
-    }
+    sessionStorage.setItem("hasLoaded", "true");
   };
 
-  // クライアントサイドでない場合はローディング表示
-  if (!isClient || isLoading) {
-    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  const handleLogoClick = () => {
+    setIsLoading(true);
+    sessionStorage.removeItem("hasLoaded"); // ローディングを強制表示
+  };
+
+  // マウントされていない場合は何も表示しない
+  if (!mounted) {
+    return null;
   }
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* HPを常に表示 */}
+      <Header onLogoClick={handleLogoClick} />
       <main>
         <Hero />
         <NewsSection />
@@ -52,6 +57,9 @@ export default function Home() {
         <AuditionSection />
       </main>
       <Footer />
+
+      {/* ローディング画面をオーバーレイとして表示 */}
+      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
     </div>
   );
 }
