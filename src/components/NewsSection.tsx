@@ -8,46 +8,29 @@ export default function NewsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             NEWS
           </h2>
-          <p className="text-lg text-gray-600">最新情報をお届けします</p>
+          <p className="text-lg text-gray-600">最新情報</p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8">
-            {newsData.map((news) => (
-              <div
-                key={news.id}
-                className="border-b border-gray-200 pb-8 last:border-b-0"
-              >
-                <div className="flex flex-col md:flex-row md:items-center gap-4">
-                  <div className="flex-shrink-0">
-                    <span className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
-                      {news.date}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg md:text-xl font-semibold text-black hover:text-gray-600 transition-colors">
-                      {news.title}
-                    </h3>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {newsData.map((news, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-gray-500">{news.date}</span>
+                  <span className="px-2 py-1 text-xs font-semibold text-white bg-purple-500 rounded-full">
+                    {news.category}
+                  </span>
                 </div>
+                <h3 className="text-xl font-semibold text-black mb-3">
+                  {news.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{news.content}</p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 記事投稿機能の案内 */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-black mb-4">
-              記事投稿機能
-            </h3>
-            <p className="text-gray-600 mb-6">
-              詳細な記事投稿機能は今後実装予定です。
-            </p>
-            <div className="text-sm text-gray-500">
-              ※ 現在は基本ニュース表示のみ対応
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

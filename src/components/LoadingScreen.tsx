@@ -101,34 +101,13 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       />
 
       {/* 背景アニメーション */}
-      <div
-        className={`absolute inset-0 ${isOpening ? "opacity-0" : "opacity-100"}`}
-      >
+      <div className="absolute inset-0">
         {/* パーティクル風の装飾 */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-gray-300 rounded-full opacity-40 animate-bounce"></div>
         <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-gray-400 rounded-full opacity-50 animate-ping"></div>
         <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-white rounded-full opacity-70 animate-pulse"></div>
         <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-gray-200 rounded-full opacity-30 animate-bounce"></div>
-
-        {/* 追加の装飾 */}
-        <div className="absolute top-1/6 left-1/6 w-1.5 h-1.5 bg-gray-300 rounded-full opacity-50 animate-pulse"></div>
-        <div className="absolute top-2/3 left-1/5 w-2.5 h-2.5 bg-white rounded-full opacity-40 animate-bounce"></div>
-        <div className="absolute bottom-1/6 right-1/5 w-1 h-1 bg-gray-400 rounded-full opacity-60 animate-ping"></div>
-        <div className="absolute top-1/5 right-2/5 w-3 h-3 bg-gray-200 rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-2/5 left-2/5 w-1.5 h-1.5 bg-white rounded-full opacity-50 animate-bounce"></div>
-        <div className="absolute top-3/4 left-1/2 w-2 h-2 bg-gray-300 rounded-full opacity-40 animate-ping"></div>
-        <div className="absolute bottom-1/5 right-1/3 w-1 h-1 bg-gray-400 rounded-full opacity-60 animate-pulse"></div>
-        <div className="absolute top-1/8 right-1/6 w-2.5 h-2.5 bg-white rounded-full opacity-30 animate-bounce"></div>
-        <div className="absolute bottom-3/4 left-1/8 w-1.5 h-1.5 bg-gray-200 rounded-full opacity-50 animate-ping"></div>
-        <div className="absolute top-2/5 right-1/8 w-1 h-1 bg-gray-300 rounded-full opacity-40 animate-pulse"></div>
-
-        {/* より小さな装飾 */}
-        <div className="absolute top-1/12 left-3/5 w-0.5 h-0.5 bg-white rounded-full opacity-70 animate-pulse"></div>
-        <div className="absolute top-5/6 right-2/5 w-0.5 h-0.5 bg-gray-300 rounded-full opacity-50 animate-bounce"></div>
-        <div className="absolute bottom-1/12 left-4/5 w-0.5 h-0.5 bg-gray-400 rounded-full opacity-60 animate-ping"></div>
-        <div className="absolute top-7/12 right-1/12 w-0.5 h-0.5 bg-white rounded-full opacity-40 animate-pulse"></div>
-        <div className="absolute bottom-7/12 left-1/12 w-0.5 h-0.5 bg-gray-200 rounded-full opacity-50 animate-bounce"></div>
       </div>
 
       {/* メインコンテンツ - 上部配置 */}
@@ -175,11 +154,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       </div>
 
       {/* プログレスバー - 画面幅全部、中央配置 */}
-      <div
-        className={`absolute top-1/2 left-0 right-0 h-1 bg-white/20 transform -translate-y-1/2 ${
-          isOpening ? "opacity-0" : "opacity-100"
-        }`}
-      >
+      <div className="absolute top-1/2 left-0 right-0 h-1 bg-white/20 transform -translate-y-1/2">
         <div
           className="h-full bg-gradient-to-r from-white via-gray-200 to-white transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}

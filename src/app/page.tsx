@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
-    // 再読み込み時もローディングを表示するため、sessionStorageをクリア
+    // デバッグ用：sessionStorageをクリアしてテストする場合は以下の行のコメントアウトを外す
     sessionStorage.removeItem("hasLoaded");
 
     // 初回読み込み時のみローディング
@@ -33,20 +33,14 @@ export default function Home() {
     sessionStorage.setItem("hasLoaded", "true");
   };
 
-  const handleLogoClick = () => {
-    setIsLoading(true);
-    sessionStorage.removeItem("hasLoaded"); // ローディングを強制表示
-  };
-
-  // マウントされていない場合は何も表示しない
-  if (!mounted) {
-    return null;
+  // マウントされていない場合やローディング中はローディング画面を表示
+  if (!mounted || isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
   }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* HPを常に表示 */}
-      <Header onLogoClick={handleLogoClick} />
+      <Header />
       <main>
         <Hero />
         <NewsSection />
@@ -57,9 +51,6 @@ export default function Home() {
         <AuditionSection />
       </main>
       <Footer />
-
-      {/* ローディング画面をオーバーレイとして表示 */}
-      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
     </div>
   );
 }

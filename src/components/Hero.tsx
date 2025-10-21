@@ -1,9 +1,36 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-16 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="pt-16 relative">
+      {/* 背景画像 */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/background.jpg"
+          alt="背景"
+          fill
+          className="object-cover opacity-10"
+          priority
+        />
+      </div>
+      {/* グラデーションオーバーレイ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white z-10"></div>
+
+      {/* 大きなロゴ - 左上に配置 */}
+      <div className="absolute top-2 left-8 z-30">
+        <button
+          onClick={() => (window.location.href = "/")}
+          className="hover:opacity-80 transition-opacity"
+        >
+          <img
+            src="/header/logo.png"
+            alt="palette promotion"
+            className="w-80 h-80 aspect-square object-contain"
+          />
+        </button>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20">
         <div className="text-center">
           {/* ロゴ */}
           <div className="mb-8">
@@ -17,24 +44,22 @@ export default function Hero() {
 
           {/* ヒーロー画像エリア */}
           <div className="mb-12">
-            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="/allmember_current.jpg"
+            <div className="relative w-full max-w-5xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+              <img
+                src="/hero/DSC00103.jpg"
                 alt="NiziIROぱれっと メンバー写真"
-                fill
-                className="object-cover"
-                priority
+                className="w-full h-auto object-cover"
+                onError={(e) => {
+                  console.error(
+                    "画像の読み込みに失敗しました:",
+                    (e.target as HTMLImageElement).src
+                  );
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
+                onLoad={() => {
+                  console.log("画像の読み込みに成功しました");
+                }}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                    NiziIROぱれっと
-                  </h2>
-                  <p className="text-lg opacity-90">
-                    個性豊かに咲く花のように
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 

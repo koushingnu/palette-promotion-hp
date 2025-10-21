@@ -1,12 +1,22 @@
-import Image from 'next/image';
+import Image from "next/image";
 import companyData from "@/data/company.json";
 
 export default function ArtistSection() {
   const { artist } = companyData;
 
   return (
-    <section id="artist" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="artist" className="py-20 relative">
+      {/* 背景画像 */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/backgrounds/bg2.jpg"
+          alt="背景"
+          className="w-full h-full object-cover opacity-5"
+        />
+      </div>
+      {/* グラデーションオーバーレイ */}
+      <div className="absolute inset-0 bg-gray-50 z-10"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
             ARTIST
@@ -16,29 +26,20 @@ export default function ArtistSection() {
 
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="md:flex">
+            <div className="md:flex md:items-stretch">
               {/* アーティスト画像エリア */}
-              <div className="md:w-1/2">
-                <div className="relative h-64 md:h-full">
-                  <Image
-                    src="/allmember_1920.png"
+              <div className="md:w-2/3">
+                <div className="relative h-80 md:h-full">
+                  <img
+                    src="/artist/allmember_1920.jpg"
                     alt="NiziIROぱれっと アーティスト写真"
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-contain object-center"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                        {artist.name}
-                      </h3>
-                      <p className="text-lg opacity-90">NiziIROぱれっと</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* アーティスト情報 */}
-              <div className="md:w-1/2 p-8">
+              <div className="md:w-1/3 p-8 flex flex-col justify-center">
                 <div className="space-y-6">
                   {/* コンセプト */}
                   <div>

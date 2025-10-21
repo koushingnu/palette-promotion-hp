@@ -1,31 +1,18 @@
-import Image from 'next/image';
 import companyData from "@/data/company.json";
 
 export default function TalentGrid() {
   const { talent } = companyData;
 
-  const getColorClass = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      イエロー: "bg-yellow-400",
-      グリーン: "bg-green-400",
-      レッド: "bg-red-400",
-      ライトブルー: "bg-blue-400",
-      ピンク: "bg-pink-400",
-      オレンジ: "bg-orange-400",
-    };
-    return colorMap[color] || "bg-gray-400";
-  };
-
   const getMemberImage = (name: string) => {
     const imageMap: { [key: string]: string } = {
-      "あきと": "/akito1.jpg",
-      "けんご": "/kengo2.jpg",
-      "だいや": "/daiya3.jpg",
-      "なぎさ": "/nagisa4.jpg",
-      "ましろ": "/mashiro5.jpg",
-      "ゆいと": "/yuito6.jpg",
+      あきと: "/talent/akito1.jpg",
+      けんご: "/talent/kengo2.jpg",
+      だいや: "/talent/daiya3.jpg",
+      なぎさ: "/talent/nagisa4.jpg",
+      ましろ: "/talent/mashiro5.jpg",
+      ゆいと: "/talent/yuito6.jpg",
     };
-    return imageMap[name] || "/allmember.jpg";
+    return imageMap[name] || "/hero/allmember_original.jpg";
   };
 
   return (
@@ -46,18 +33,11 @@ export default function TalentGrid() {
             >
               {/* メンバー画像エリア */}
               <div className="relative h-48 overflow-hidden">
-                <Image
+                <img
                   src={getMemberImage(member.name)}
                   alt={`${member.name}の写真`}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-lg opacity-90">{member.color}</p>
-                  </div>
-                </div>
               </div>
 
               {/* メンバー情報 */}

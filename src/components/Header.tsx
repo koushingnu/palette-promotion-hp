@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface HeaderProps {
   onLogoClick?: () => void;
@@ -31,9 +32,16 @@ export default function Header({ onLogoClick }: HeaderProps) {
           <div className="flex-shrink-0">
             <button
               onClick={handleLogoClick}
-              className="text-2xl font-bold text-black hover:text-gray-600 transition-colors"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
-              palette promotion
+              <img
+                src="/header/logo.png"
+                alt="palette promotion"
+                className="w-10 h-10"
+              />
+              <span className="text-2xl font-bold text-black">
+                palette promotion
+              </span>
             </button>
           </div>
 
