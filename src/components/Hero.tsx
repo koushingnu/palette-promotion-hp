@@ -16,30 +16,30 @@ export default function Hero() {
       {/* グラデーションオーバーレイ */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white z-10"></div>
 
-      {/* 大きなロゴ - 左上に配置 */}
-      <div className="absolute top-2 left-8 z-30">
-        <button
-          onClick={() => (window.location.href = "/")}
-          className="hover:opacity-80 transition-opacity"
-        >
-          <img
-            src="/header/logo.png"
-            alt="palette promotion"
-            className="w-80 h-80 aspect-square object-contain"
-          />
-        </button>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-20">
         <div className="text-center">
-          {/* ロゴ */}
+          {/* ロゴとタイトル */}
           <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">
-              palette promotion
-            </h1>
-            <p className="text-lg text-gray-600">
-              個性豊かに咲く花のように、あなたと架ける虹のように
-            </p>
+            <div className="flex items-center justify-center space-x-4 md:space-x-1">
+              <button
+                onClick={() => (window.location.href = "/")}
+                className="hover:opacity-80 transition-opacity flex-shrink-0"
+              >
+                <img
+                  src="/header/logo.png"
+                  alt="palette promotion"
+                  className="w-36 h-36 md:w-56 md:h-56 aspect-square object-contain"
+                />
+              </button>
+              <div className="text-center min-w-0 flex-1 pl-0">
+                <h1 className="text-2xl md:text-6xl font-bold text-black mb-2 whitespace-nowrap">
+                  palette promotion
+                </h1>
+                <p className="text-xs md:text-base text-gray-600">
+                  個性豊かに咲く花のように、あなたと架ける虹のように
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* ヒーロー画像エリア */}

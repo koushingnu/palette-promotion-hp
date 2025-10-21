@@ -147,14 +147,22 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       </div>
 
       {/* フッター装飾 */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+      <div
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-500 ${
+          isOpening ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <div className="text-sm text-gray-300 opacity-60 tracking-wider">
           NiziIROぱれっと
         </div>
       </div>
 
       {/* プログレスバー - 画面幅全部、中央配置 */}
-      <div className="absolute top-1/2 left-0 right-0 h-1 bg-white/20 transform -translate-y-1/2">
+      <div
+        className={`absolute top-1/2 left-0 right-0 h-1 bg-white/20 transform -translate-y-1/2 transition-opacity duration-500 ${
+          isOpening ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <div
           className="h-full bg-gradient-to-r from-white via-gray-200 to-white transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
