@@ -15,6 +15,30 @@ export default function TalentGrid() {
     return imageMap[name] || "/hero/allmember_original.jpg";
   };
 
+  const getColorClass = (color: string) => {
+    const colorMap: { [key: string]: string } = {
+      イエロー: "text-amber-400",
+      グリーン: "text-emerald-500",
+      レッド: "text-red-500",
+      ライトブルー: "text-sky-400",
+      ピンク: "text-pink-400",
+      オレンジ: "text-orange-400",
+    };
+    return colorMap[color] || "text-black";
+  };
+
+  const getBackgroundColor = (color: string) => {
+    const colorMap: { [key: string]: string } = {
+      ライトブルー: "#60A5FA",
+      イエロー: "#FBBF24",
+      グリーン: "#34D399",
+      レッド: "#F87171",
+      ピンク: "#F472B6",
+      オレンジ: "#FB923C",
+    };
+    return colorMap[color] || "#000000";
+  };
+
   return (
     <section id="talent" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,23 +67,21 @@ export default function TalentGrid() {
               {/* メンバー情報 */}
               <div className="p-6">
                 <div className="space-y-4">
+                  {/* メンバー名 */}
+                  <div className="text-center">
+                    <h3
+                      className={`text-2xl font-bold ${getColorClass(member.color)} mb-2`}
+                    >
+                      {member.name}
+                    </h3>
+                  </div>
+
                   {/* 担当カラー */}
                   <div className="flex items-center">
                     <span
                       className="w-4 h-4 rounded-full mr-3"
                       style={{
-                        backgroundColor:
-                          member.color === "ライトブルー"
-                            ? "#60A5FA"
-                            : member.color === "イエロー"
-                              ? "#FBBF24"
-                              : member.color === "グリーン"
-                                ? "#34D399"
-                                : member.color === "レッド"
-                                  ? "#F87171"
-                                  : member.color === "ピンク"
-                                    ? "#F472B6"
-                                    : "#FB923C",
+                        backgroundColor: getBackgroundColor(member.color),
                       }}
                     ></span>
                     <span className="text-sm text-gray-600">

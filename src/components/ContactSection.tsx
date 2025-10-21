@@ -19,31 +19,9 @@ export default function ContactSection() {
                 ご質問やお問い合わせがございましたら、下記までご連絡ください。
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex flex-col items-center space-y-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-8 h-8 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-semibold text-black mb-2">
-                    電話
-                  </h4>
-                  <p className="text-gray-700">03-1234-5678</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -58,10 +36,41 @@ export default function ContactSection() {
                       />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold text-black mb-2">
+                  <h4 className="text-lg font-semibold text-black mb-4">
                     メール
                   </h4>
-                  <p className="text-gray-700">info@palette-promotion.com</p>
+                  <a
+                    href="mailto:info@nizi-pale.com"
+                    className="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    info@nizi-pale.com
+                  </a>
+                </div>
+
+                <div className="text-center">
+                  <h4 className="text-lg font-semibold text-black mb-2">
+                    所在地
+                  </h4>
+                  <p className="text-gray-700">
+                    〒160-0023
+                    <br />
+                    東京都新宿区西新宿三丁目3番13号　西新宿水間ビル6階
+                    <br />
+                    株式会社palette promotion
+                  </p>
                 </div>
               </div>
             </div>

@@ -1,70 +1,71 @@
 {
   "company": {
-    "name": "palette promotion",
-    "description": "個性豊かに咲く花のように、あなたと架ける虹のように、みんなを笑顔にできますように。",
-    "address": "東京都渋谷区",
-    "phone": "03-1234-5678",
-    "email": "info@palette-promotion.com"
+    "name": "株式会社palette promotion",
+    "description": "俳優、タレント、モデル、歌手、スポーツ選手、文化人等のマネージメント・プロデュース、番組・催物及び出版物等の企画、制作広告宣伝物の企画、制作並び代理業",
+    "established": "2024年2月",
+    "capital": "100万円",
+    "address": "〒160-0023\n東京都新宿区西新宿三丁目3番13号　西新宿水間ビル6階",
+    "email": "info@nizi-pale.com"
   },
   "artist": {
     "name": "NiziIROぱれっと",
     "concept": "個性豊かに咲く花のように、あなたと架ける虹のように、みんなを笑顔にできますように。",
     "debut": "2022年ステージデビュー",
     "achievements": [
-      "2024年3月 KANSAI COLLECTION2024 S/S 出演(2万人の前でパフォーマンス)",
-      "2024年9月 代々木野外音楽堂にて初の野外ワンマンライブ開催",
-      "2025年8月 都内最大級の豊洲PITでのワンマンライブ開催",
+      "2024年3月 KANSAI COLLECTION2024 S/S に出演し2万人の前でパフォーマンス",
+      "2024年9月 代々木野外音楽堂にて初の野外ワンマンライブを開催",
+      "2025年8月 都内最大級の豊洲PITでのワンマンライブを開催",
       "2025年10月 ビクターエンタテインメントからメジャーデビュー"
     ],
     "sns": {
       "x": "https://x.com/Nizi_Pale_info",
       "instagram": "https://www.instagram.com/nizi_pale_info/",
-      "tiktok": "https://www.tiktok.com/@nizi_pale_info",
-      "youtube": "https://www.youtube.com/@nizi_pale_info"
+      "tiktok": "https://www.tiktok.com/@nizi_pale_official",
+      "youtube": "https://www.youtube.com/@niziiro7203"
     }
   },
   "talent": [
     {
       "name": "あきと",
       "color": "イエロー",
-      "birthday": "1998年3月15日",
-      "hobby": "映画鑑賞、読書",
-      "skill": "ダンス、歌"
+      "birthday": "2月21日",
+      "hobby": "TCG/ガンプラ",
+      "skill": "綺麗な球体を作れる"
     },
     {
       "name": "けんご",
       "color": "グリーン",
-      "birthday": "1999年7月22日",
-      "hobby": "ゲーム、アニメ",
-      "skill": "ラップ、ダンス"
+      "birthday": "4月3日",
+      "hobby": "東京ヴェルディ",
+      "skill": "サッカー(幼稚園から)"
     },
     {
       "name": "だいや",
       "color": "レッド",
-      "birthday": "2000年11月8日",
-      "hobby": "音楽制作、写真",
-      "skill": "作詞作曲、ギター"
+      "birthday": "4月15日",
+      "hobby": "YouTube鑑賞",
+      "skill": "バスケ(全国大会出場)"
     },
     {
       "name": "なぎさ",
       "color": "ライトブルー",
-      "birthday": "2001年4月12日",
-      "hobby": "料理、旅行",
-      "skill": "歌、ピアノ"
+      "birthday": "7月28日",
+      "hobby": "温泉",
+      "skill": "鼻がいい"
     },
     {
       "name": "ましろ",
       "color": "ピンク",
-      "birthday": "2002年9月3日",
-      "hobby": "ファッション、美容",
-      "skill": "ダンス、モデリング"
+      "birthday": "2月28日",
+      "hobby": "犬の散歩",
+      "skill": "コスプレ/歌ってみた"
     },
     {
       "name": "ゆいと",
       "color": "オレンジ",
-      "birthday": "2003年12月25日",
-      "hobby": "スポーツ、映画",
-      "skill": "ダンス、アクロバット"
+      "birthday": "12月19日",
+      "hobby": "スニーカー探し",
+      "skill": "サッカー"
     }
   ]
 }

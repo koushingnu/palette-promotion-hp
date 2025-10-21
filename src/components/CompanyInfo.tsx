@@ -14,37 +14,83 @@ export default function CompanyInfo() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-black mb-4">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div className="space-y-12">
+              {/* 会社名 */}
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-black mb-6">
                   {company.name}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {company.description}
-                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-black mb-2">
-                    所在地
-                  </h4>
-                  <p className="text-gray-700">{company.address}</p>
+              {/* 会社概要 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-black mb-2 flex items-center">
+                      <span className="w-1.5 h-6 bg-black rounded-full mr-3"></span>
+                      設立
+                    </h4>
+                    <p className="text-gray-700 pl-6">{company.established}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-black mb-2 flex items-center">
+                      <span className="w-1.5 h-6 bg-black rounded-full mr-3"></span>
+                      資本金
+                    </h4>
+                    <p className="text-gray-700 pl-6">{company.capital}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-black mb-2 flex items-center">
+                      <span className="w-1.5 h-6 bg-black rounded-full mr-3"></span>
+                      所在地
+                    </h4>
+                    <p className="text-gray-700 pl-6 whitespace-pre-line">
+                      {company.address}
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-black mb-2">
-                    電話番号
-                  </h4>
-                  <p className="text-gray-700">{company.phone}</p>
-                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-black mb-2 flex items-center">
+                      <span className="w-1.5 h-6 bg-black rounded-full mr-3"></span>
+                      事業内容
+                    </h4>
+                    <p className="text-gray-700 pl-6 leading-relaxed">
+                      {company.description}
+                    </p>
+                  </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-black mb-2">
-                    メールアドレス
-                  </h4>
-                  <p className="text-gray-700">{company.email}</p>
+                  <div>
+                    <h4 className="text-lg font-semibold text-black mb-2 flex items-center">
+                      <span className="w-1.5 h-6 bg-black rounded-full mr-3"></span>
+                      お問い合わせ
+                    </h4>
+                    <div className="pl-6">
+                      <a
+                        href={`mailto:${company.email}`}
+                        className="inline-flex items-center text-gray-700 hover:text-black transition-colors"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                        {company.email}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

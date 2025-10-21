@@ -28,7 +28,7 @@ export default function ArtistSection() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="md:flex md:items-stretch">
               {/* アーティスト画像エリア */}
-              <div className="md:w-2/3">
+              <div className="md:w-3/5">
                 <div className="relative h-80 md:h-full">
                   <img
                     src="/artist/allmember_1920.jpg"
@@ -39,7 +39,7 @@ export default function ArtistSection() {
               </div>
 
               {/* アーティスト情報 */}
-              <div className="md:w-1/3 p-8 flex flex-col justify-center">
+              <div className="md:w-2/5 p-8 flex flex-col justify-center">
                 <div className="space-y-6">
                   {/* コンセプト */}
                   <div>
