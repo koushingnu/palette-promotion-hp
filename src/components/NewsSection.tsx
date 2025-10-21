@@ -18,23 +18,26 @@ export default function NewsSection() {
               className="group bg-white hover:bg-gray-50 border-b border-gray-200 transition-colors duration-300"
             >
               <div className="py-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 w-32">
-                    <p className="text-base font-medium text-gray-900">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+                  <div className="flex items-center justify-between md:justify-start md:w-auto">
+                    <p className="text-base font-medium text-gray-900 w-32 flex-shrink-0">
                       {news.date}
                     </p>
-                  </div>
-                  <div className="flex-shrink-0 w-28">
-                    <span className="inline-flex items-center justify-center w-24 px-4 py-1.5 text-xs font-medium tracking-wider text-white bg-black rounded-full">
+                    <span className="md:hidden w-24 px-3 py-1 text-xs font-medium tracking-wider text-white bg-black rounded-full text-center">
                       {news.category}
                     </span>
                   </div>
-                  <div className="min-w-0 flex-1 px-6">
-                    <h3 className="text-lg font-medium text-gray-900 group-hover:text-gray-600 transition-colors duration-300">
+                  <div className="hidden md:block flex-shrink-0">
+                    <span className="w-24 px-3 py-1 text-xs font-medium tracking-wider text-white bg-black rounded-full text-center inline-block">
+                      {news.category}
+                    </span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base md:text-lg font-medium text-gray-900 group-hover:text-gray-600 transition-colors duration-300 line-clamp-2 md:line-clamp-1">
                       {news.title}
                     </h3>
                   </div>
-                  <div className="flex-shrink-0">
+                  <div className="hidden md:block flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors duration-300"
                       fill="none"
