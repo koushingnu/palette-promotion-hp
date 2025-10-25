@@ -32,7 +32,7 @@ export default function AuditionSection() {
                 【NEXT IDOL PROJECT2025】
               </h4>
               <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-                2025年10月15日開催予定
+                2025年11月15日応募締め切り!!
                 <br />
                 一緒に夢を追いかけませんか？
               </p>
@@ -76,10 +76,6 @@ export default function AuditionSection() {
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>応募フォームからエントリー</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>自己紹介動画の提出</span>
                     </li>
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>

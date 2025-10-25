@@ -124,9 +124,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           <div className="text-3xl md:text-4xl font-light text-gray-300 tracking-[0.3em]">
             PROMOTION
           </div>
-          <div className="mt-6 text-lg text-gray-300 opacity-80">
-            個性豊かに咲く花のように、あなたと架ける虹のように
-          </div>
+          <div className="mt-6 text-lg text-gray-300 opacity-80"></div>
         </div>
       </div>
 

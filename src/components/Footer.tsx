@@ -8,13 +8,11 @@ export default function Footer() {
           {/* 会社情報 */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">palette promotion</h3>
-            <p className="text-gray-300 mb-4">
-              個性豊かに咲く花のように、あなたと架ける虹のように、みんなを笑顔にできますように。
-            </p>
+            <p className="text-gray-300 mb-4"></p>
             <div className="space-y-2 text-sm text-gray-300">
-              <p>〒150-0000 東京都渋谷区</p>
-              <p>TEL: 03-1234-5678</p>
-              <p>Email: info@palette-promotion.com</p>
+              <p>〒１６０-００２３</p>
+              <p>東京都新宿区西新宿三丁目3番13号　西新宿水間ビル6階</p>
+              <p>株式会社palette promotion</p>
             </div>
           </div>
 

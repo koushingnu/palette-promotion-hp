@@ -35,9 +35,7 @@ export default function Hero() {
                 <h1 className="text-2xl md:text-6xl font-bold text-black mb-2 whitespace-nowrap">
                   palette promotion
                 </h1>
-                <p className="text-xs md:text-base text-gray-600">
-                  個性豊かに咲く花のように、あなたと架ける虹のように
-                </p>
+                <p className="text-xs md:text-base text-gray-600"></p>
               </div>
             </div>
           </div>
@@ -91,9 +89,7 @@ export default function Hero() {
 
           {/* キャッチコピー */}
           <div className="max-w-3xl mx-auto">
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
-              「個性豊かに咲く花のように、あなたと架ける虹のように、みんなを笑顔にできますように。」
-            </p>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed"></p>
           </div>
         </div>
       </div>
